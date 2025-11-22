@@ -4,9 +4,14 @@ import './index.css'
 
 import { RouterProvider } from 'react-router'
 import { router } from './route/index.tsx'
+import { ThemeProvider } from './providers/theme.provider.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <RouterProvider router={router}></RouterProvider>
+
+    </ThemeProvider>
+    
   </StrictMode>,
 )
